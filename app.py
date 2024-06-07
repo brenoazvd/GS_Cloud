@@ -35,8 +35,8 @@ def importar():
         try:
 
             # Conexão com o Azure Storage Account
-            <CONNECTION_STRING> = "DefaultEndpointsProtocol=https;AccountName=strprdfiapon0807;AccountKey=WHzcfj9Z+gRCqyzVnKQ/3MQQgnhXgDuWxcyHMlKeA159g8zbwNb6fKy51IcI8yQhs1ieAttAKNah+AStPTt4RA==;EndpointSuffix=core.windows.net" 
-            <CONTAINER_CLIENT> = "globalsolution"
+            CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=strprdfiapon0807;AccountKey=WHzcfj9Z+gRCqyzVnKQ/3MQQgnhXgDuWxcyHMlKeA159g8zbwNb6fKy51IcI8yQhs1ieAttAKNah+AStPTt4RA==;EndpointSuffix=core.windows.net" 
+            CONTAINER_CLIENT = "globalsolution"
 
             # Ler o arquivo CSV com o Pandas
             v_dados = pd.read_csv(meu_csv.name, encoding="latin1", on_bad_lines="warn", sep=";", decimal=",")
