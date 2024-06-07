@@ -11,12 +11,17 @@ import pandas as pd
 app = Flask(__name__)
 
 # Configurações do banco de dados MySQL
-db_config = {
-    'host': '<ip_host_do_servidor>',
-    'user': '<user_name>',
-    'password': '<password>',
-    'database': '<database_name>'
-}
+db_config = { 
+
+    'host': '152.70.223.51', 
+
+    'user': 'RM556764', 
+
+    'password': 'Fiap##2024', 
+
+    'database': 'DB_RM556764' 
+
+} 
 
 # Rota para a página inicial
 @app.route('/')
@@ -30,21 +35,8 @@ def importar():
         try:
 
             # Conexão com o Azure Storage Account
-            CONNECTION_STRING = <CONNECTION_STRING>
-            CONTAINER_CLIENT = <CONTAINER_CLIENT>
-
-            blob_service_client = BlobServiceClient.from_connection_string(CONNECTION_STRING)
-
-            container_client = blob_service_client.get_container_client(CONTAINER_CLIENT)
-
-            blobs_list = container_client.list_blobs()
-
-            for blob in blobs_list:
-                blob_client = blob_service_client.get_blob_client(container=CONTAINER_CLIENT, blob=blob.name)
-
-            with open("seu_arquivo_local.csv", "wb") as meu_csv:
-                blob_data = blob_client.download_blob()
-                meu_csv.write(blob_data.readall())
+            <CONNECTION_STRING> = "DefaultEndpointsProtocol=https;AccountName=strprdfiapon0807;AccountKey=WHzcfj9Z+gRCqyzVnKQ/3MQQgnhXgDuWxcyHMlKeA159g8zbwNb6fKy51IcI8yQhs1ieAttAKNah+AStPTt4RA==;EndpointSuffix=core.windows.net" 
+            <CONTAINER_CLIENT> = "globalsolution"
 
             # Ler o arquivo CSV com o Pandas
             v_dados = pd.read_csv(meu_csv.name, encoding="latin1", on_bad_lines="warn", sep=";", decimal=",")
